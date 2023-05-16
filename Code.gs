@@ -1,14 +1,14 @@
 function createSlideFromFormResponse() {
   //get the response data
 
-  var form = FormApp.openById('1HHImHMabUaMrdPL43HPqsjnCNWCGvQH2np_0Ii6YKls');
+  var form = FormApp.openById('INSERT FORM ID HERE');
   var response = form.getResponses().pop();
   var itemResponses = response.getItemResponses();
   Logger.log(itemResponses);
 
   //obtain slides ID and open slides
 
-  presentationId = "1m5aHsCecw3TBTAuoV3c2JzDVfRi50ttdbIS90LPTK-E";
+  presentationId = "INSERT SLIDES ID HERE";
   var presentation = SlidesApp.openById(presentationId);
 
   //create a new slide in the Google Slides presentation  
@@ -18,7 +18,8 @@ function createSlideFromFormResponse() {
   //add the form response data to the new slide
 
   var InMemoryOf = slide.insertTextBox(itemResponses[2].getResponse());
-
+  var Message = slide.insertTextBox(itemResponses[5].getResponse());
+  //if form elements are not required, check if form responses exist
   if(itemResponses[3].getResponse() && itemResponses[4].getResponse()){
     var Combined_Dates = formatDate(itemResponses[3].getResponse()) + " - " + formatDate(itemResponses[4].getResponse());
     var Dates = slide.insertTextBox(Combined_Dates);
@@ -31,9 +32,6 @@ function createSlideFromFormResponse() {
     var Dates = slide.insertTextBox("");
   }
 
-  var Message = slide.insertTextBox(itemResponses[5].getResponse());
-  Logger.log(itemResponses[6].getResponse())
- 
   //Image
 
   var fileURL = 'https://drive.google.com/file/d/' + itemResponses[6].getResponse() + '/view?pli=1'
