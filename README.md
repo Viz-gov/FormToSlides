@@ -10,4 +10,6 @@ Certain parts of the script are specific to my project. These include:
 - Retrieve the "Form ID" and "Slides ID" by looking at the characters between /d/ and /edit in the URL.
 
 With a little bit of creative thinking, you can figure out how to modify this template to successfully meet your specifications. Hope this helps!
+
+Test image for what slides will look like given current code:
 ![formtoslides](https://github.com/Viz-gov/FormToSlides/assets/67242799/eafd3a0e-aaed-45ad-8987-c439b9cf667b)
